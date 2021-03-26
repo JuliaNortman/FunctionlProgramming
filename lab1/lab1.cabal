@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a00ec3b06c73b2241baeb4d1fe97e992c1533b01862fcdf078ac62283d88cbe7
+-- hash: 1c25acd81c0de3b6f13a5499f49b22baf8db90c83a0f3b7ab39f8ede9d2bf376
 
 name:           lab1
 version:        0.1.0.0
@@ -27,13 +27,19 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Connection
+      Participants
+      Section
+      Student
+      Teacher
   other-modules:
       Paths_lab1
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , postgresql-simple
+    , text
   default-language: Haskell2010
 
 executable lab1-exe
@@ -46,6 +52,8 @@ executable lab1-exe
   build-depends:
       base >=4.7 && <5
     , lab1
+    , postgresql-simple
+    , text
   default-language: Haskell2010
 
 test-suite lab1-test
@@ -59,4 +67,6 @@ test-suite lab1-test
   build-depends:
       base >=4.7 && <5
     , lab1
+    , postgresql-simple
+    , text
   default-language: Haskell2010
